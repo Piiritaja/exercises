@@ -32,15 +32,6 @@ def count_occurrences(file_path, word):
     pass
 
 
-def count_words(content):
-    """
-    Count the total number of words int the string.
-    :param content: file output as string
-    :return: number of words in input
-    """
-    pass
-
-
 def get_paragraphs(file_path):
     """
     Find and return all paragraphs of a file as a list.
