@@ -7,11 +7,11 @@ Kõik raamatud on antud ülesandes .txt laiendiga.
 Raamatu loetavuse hindamiseks kasutame Coleman–Liau indeksit. See indeks ütleb meile millise klassi õpilase jaoks raamat sobilik on.
 
 Indeksit arvutatakse sellise valemiga:
-I = 0.588L -0.296S -15.8
+I = 0.588L -0.296S -15.8,
 
 
 kus L = keskmine tähtede arv 100 sõna kohta
-    S = keskmine lausete arv 100 sõna kohta
+    , S = keskmine lausete arv 100 sõna kohta
 
 ## Mall
 [Mall](mall.py)
