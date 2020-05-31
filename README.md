@@ -22,7 +22,7 @@ kus L = keskmine tähtede arv 100 sõna kohta
 Saab sisendiks faili(siin ülesandes on failiks raamatud .txt kujul), ning tagastab faili sisu stringina
 
 ### replace_word(file_path, word_to_replace, word_to_replace_with)
-Saab sisendiks faili, mida muuta, sõna mida asendada ning asendussõna.
+Saab sisendiks faili, mida muuta, sõna, mida asendada ning asendussõna.
 
 Funktsioon asendab failis iga 'word_to_replace' sõne 'word_to_replace_with' sõnega.
 
