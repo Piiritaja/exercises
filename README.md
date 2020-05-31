@@ -32,7 +32,7 @@ Funktsioon peab looma vanast failist koopia, kujul '[faili nimi]_old.txt'.
 
 Abiks: koopia fail peab olema samas pathis kus originaal fail. Path võib olla windowsi või UNIXI tüüpi. Kui esialgne path on 'books/Tõde ja Õigus.txt', siis koopia path on 'books/Tõde ja Õigus_old.txt', mitte 'books\Tõde ja Õigus_old.txt'.
 
-Koosta regex, mis eristab kausta pathi ning faili.
+Koosta regex, mis saab aru mõlemast ning eristab kausta pathi ning faili.
 
 ### roll_back(file_path)
 Saab sisendiks faili, mis eelmisele versioonile tagasi viia ('..._old.txt' faili sisule).
