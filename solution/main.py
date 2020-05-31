@@ -22,7 +22,10 @@ def replace_word(file_path, word_to_replace, word_to_replace_with):
 
 
 def create_backup(file_path):
-    copy_path = "_old.".join(file_path.split("."))
+    print("jah")
+    r = re.search(r"(.+[/\\])(\w+\s*)+\.txt$", file_path)
+    copy_path = f"{r.group(1)}{r.group(2)}_old.txt"
+    print(copy_path)
     copyfile(file_path, copy_path)
 
 
@@ -35,12 +38,15 @@ def roll_back(file_path):
     :param file_path: file to roll back.
     :return:
     """
+    print(file_path)
     try:
-
-        copy_path = "_old.".join(file_path.split("."))
+        r = re.search(r"(.+[/\\])(\w+\s*)+\.txt$", file_path)
+        copy_path = f"{r.group(1)}{r.group(2)}_old.txt"
         copyfile(copy_path, file_path)
         os.remove(copy_path)
+        print(os.listdir("../books"))
     except FileNotFoundError:
+        print("nope")
         with open(file_path, "w") as f:
             f.write("")
 
@@ -59,6 +65,7 @@ def read_file(file_path):
 def count_occurrences(file_path, word):
     """
     Count the number of occurrences of a given word in the file.
+
     :param file_path: path to file
     :param word: word to search for
     :return: number of words in the input string
@@ -76,8 +83,6 @@ def calc_l(content):
 
 
 def calc_s(content):
-    number_of_sentences = content.count("! ") + content.count("? ") + content.count(". ")
-    number_of_sentences += content.count(".\n") + content.count("?+\n") + content.count(".+\n")
     return get_sentences(content) / get_words(content) * 100
 
 
@@ -86,7 +91,7 @@ def get_sentences(content):
 
 
 def get_words(content):
-    return len(content.split(" "))
+    return len(re.findall(r"\S+", content))
 
 
 def count_sentences(file_path):
@@ -190,8 +195,8 @@ def readability(file_path):
     :return: readability index
     """
     content = read_file(file_path)
-    return int(round(0.0588 * calc_l(content) - 0.296 * calc_s(content) - 15.8))
+    return int(0.0588 * calc_l(content) - 0.296 * calc_s(content) - 15.8)
 
 
 if __name__ == '__main__':
-    add_books("../books/", "grades.txt")
+    add_books("../books/", "../grades.txt")
