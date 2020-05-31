@@ -13,6 +13,8 @@ I = 0.588L -0.296S -15.8,
 kus L = keskmine tähtede arv 100 sõna kohta
     , S = keskmine lausete arv 100 sõna kohta
 
+NB! Siin ülesandes on palju file pathidega tegemist. Funktsiooni sisendiks võib olla Windowsi pathe või UNIXi pathe.
+
 ## Mall
 [Mall](mall.py)
 
@@ -27,6 +29,10 @@ Saab sisendiks faili, mida muuta, sõna, mida asendada ning asendussõna.
 Funktsioon asendab failis iga 'word_to_replace' sõne 'word_to_replace_with' sõnega.
 
 Funktsioon peab looma vanast failist koopia, kujul '[faili nimi]_old.txt'.
+
+Abiks: koopia fail peab olema samas pathis kus originaal fail. Path võib olla windowsi või UNIXI tüüpi. Kui esialgne path on 'books/Tõde ja Õigus.txt', siis koopia path on 'books/Tõde ja Õigus_old.txt', mitte 'books\Tõde ja Õigus_old.txt'.
+
+Koosta regex, mis eristab kausta pathi ning faili.
 
 ### roll_back(file_path)
 Saab sisendiks faili, mis eelmisele versioonile tagasi viia ('..._old.txt' faili sisule).
