@@ -11,8 +11,8 @@ def read_file(file_path):
 def replace_word(file_path, word_to_replace, word_to_replace_with):
     """
     Replace all occurrences of a word with a new word.
-    Save the old contents of the file to '[fileName]_old.txt'.
 
+    Save the old contents of the file to '[fileName]_old.txt'.
     :param file_path: file to write to.
     :param word_to_replace: words to replace.
     :param word_to_replace_with: word to replace with.
@@ -113,8 +113,9 @@ def add_books(book_folder_path, file_path):
     """
     Add all books from a specified folder to book readability index file.
 
-    :param book_folder_path:
-    :param file_path:
+    Only choose .txt files!
+    :param book_folder_path: folder path containing books
+    :param file_path: file path of the books with readability indexes.
     :return:
     """
     pass
