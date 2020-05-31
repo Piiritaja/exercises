@@ -1,7 +1,7 @@
 import re
 from string import ascii_letters
 from shutil import copyfile
-from os import remove, path
+import os
 
 
 def replace_word(file_path, word_to_replace, word_to_replace_with):
@@ -39,20 +39,21 @@ def roll_back(file_path):
 
         copy_path = "_old.".join(file_path.split("."))
         copyfile(copy_path, file_path)
-        remove(copy_path)
+        os.remove(copy_path)
     except FileNotFoundError:
         with open(file_path, "w") as f:
             f.write("")
 
 
 def read_file(file_path):
+    """
+    Read file contents.
+
+    :param file_path:
+    :return: file contents as a string
+    """
     with open(file_path) as f:
-        content = f.read().lower()
-        return content
-
-
-def remove_titles(content):
-    return re.sub(r"\d+. [\w\s]+\n", "", content)
+        return f.read()
 
 
 def count_occurrences(file_path, word):
@@ -71,22 +72,41 @@ def calc_l(content):
     for i in content:
         if i in ascii_letters:
             letter_count += 1
-    return letter_count / count_words(content) * 100
+    return letter_count / get_words(content) * 100
 
 
 def calc_s(content):
     number_of_sentences = content.count("! ") + content.count("? ") + content.count(". ")
     number_of_sentences += content.count(".\n") + content.count("?+\n") + content.count(".+\n")
-    return number_of_sentences / count_words(content) * 100
+    return get_sentences(content) / get_words(content) * 100
 
 
-def count_words(content):
-    """
-    Count the total number of words int the string.
-    :param content: file output as string
-    :return: number of words in input
-    """
+def get_sentences(content):
+    return len(re.findall(r".[\.!?]\s|\.\"\s", content))
+
+
+def get_words(content):
     return len(content.split(" "))
+
+
+def count_sentences(file_path):
+    """
+    Count the total number of sentences in the file.
+
+    :param file_path:
+    :return: number of sentences in the file
+    """
+    return get_sentences(read_file(file_path))
+
+
+def count_words(file_path):
+    """
+    Count the total number of words in the file.
+
+    :param file_path:
+    :return: number of words in the file
+    """
+    return get_words(read_file(file_path))
 
 
 def get_paragraphs(file_path):
@@ -120,7 +140,7 @@ def add_book(book_path, file_path):
     re_compiler = re.compile(r"(/)*([\s\w]+)\.txt")
     book = re_compiler.search(book_path).group(2)
     contents = []
-    if path.exists(file_path):
+    if os.path.exists(file_path):
         with open(file_path, "r+") as f:
             contents = f.readlines()
     if any(book in content for content in contents):
@@ -145,6 +165,20 @@ def add_book(book_path, file_path):
             f.write(res)
 
 
+def add_books(book_folder_path, file_path):
+    """
+    Add all books from a specified folder to book readability index file.
+
+    :param book_folder_path:
+    :param file_path:
+    :return:
+    """
+    r = re.compile(r"(\w+\s*)+\.txt$")
+    books = list(filter(r.match, os.listdir(book_folder_path)))
+    for book in books:
+        add_book(book_folder_path + book, file_path)
+
+
 def readability(file_path):
     """
     Calculate the readability index.
@@ -155,5 +189,9 @@ def readability(file_path):
     :param file_path: book contents as a string.
     :return: readability index
     """
-    content = remove_titles(read_file(file_path))
+    content = read_file(file_path)
     return int(round(0.0588 * calc_l(content) - 0.296 * calc_s(content) - 15.8))
+
+
+if __name__ == '__main__':
+    add_books("../books/", "grades.txt")
