@@ -7,11 +7,11 @@ Kõik raamatud on antud ülesandes .txt laiendiga.
 Raamatu loetavuse hindamiseks kasutame Coleman–Liau indeksit. See indeks ütleb meile millise klassi õpilase jaoks raamat sobilik on.
 
 Indeksit arvutatakse sellise valemiga:
-I = 0.588L -0.296S -15.8
+I = 0.588L -0.296S -15.8,
 
 
 kus L = keskmine tähtede arv 100 sõna kohta
-    S = keskmine lausete arv 100 sõna kohta
+    , S = keskmine lausete arv 100 sõna kohta
 
 ## Mall
 [Mall](mall.py)
@@ -22,7 +22,7 @@ kus L = keskmine tähtede arv 100 sõna kohta
 Saab sisendiks faili(siin ülesandes on failiks raamatud .txt kujul), ning tagastab faili sisu stringina
 
 ### replace_word(file_path, word_to_replace, word_to_replace_with)
-Saab sisendiks faili, mida muuta, sõna mida asendada ning asendussõna.
+Saab sisendiks faili, mida muuta, sõna, mida asendada ning asendussõna.
 
 Funktsioon asendab failis iga 'word_to_replace' sõne 'word_to_replace_with' sõnega.
 
@@ -50,7 +50,7 @@ Koosta regex, mis loeks laused kokku. Abiks:
 
 Lauses võivad olla mõttekohad: "..."
 
-Lauses võivad olla numbrid: "2. September on tore päev!"
+Lauses võivad olla numbrid: "2. september on tore päev!"
 
 ### get_paragraphs(file_path)
 Saab sisendiks faili, ning leiab selle raamatu(sisendfaili) peatükid.
@@ -61,16 +61,16 @@ Kõik peatükkid on failis eraldi real ning on kujul:
 
 Tagastada list kõikidest pealkirjadest samal kujul. Näiteks:
 
-1. Algus
+>1. Algus
 
-See lugu algas ootamatult.
+>See lugu algas ootamatult.
 
-Väga ootamatult.
+>Väga ootamatult.
 
 
-2. Lõpp
+>2. Lõpp
 
-Lugu lõppes ootamatult.
+>Lugu lõppes ootamatult.
 
 
 Väljundiks oleks: ['1. Algus','2. Lõpp']
@@ -110,12 +110,12 @@ Kaustas võib ka olla faile, mis ei ole raamatud.
 
 Näiteks sellises kaustas:
 
-  'Tõde ja Õigus.txt'
-  
-  'Tõde ja Õigus.txt.old'
-  
-  'eksmat_avaldus.dox'
-  
-  'Püüton.txt'
+>  'Tõde ja Õigus.txt'
+>  
+>  'Tõde ja Õigus.txt.old'
+>  
+>  'eksmat_avaldus.dox'
+>  
+>  'Püüton.txt'
   
 On ainult 2 raamatut: 'Tõde ja Õigus.txt' ja 'Püüton.txt'
