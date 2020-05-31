@@ -110,12 +110,12 @@ Kaustas võib ka olla faile, mis ei ole raamatud.
 
 Näiteks sellises kaustas:
 
-  'Tõde ja Õigus.txt'
-  
-  'Tõde ja Õigus.txt.old'
-  
-  'eksmat_avaldus.dox'
-  
-  'Püüton.txt'
+>  'Tõde ja Õigus.txt'
+>  
+>  'Tõde ja Õigus.txt.old'
+>  
+>  'eksmat_avaldus.dox'
+>  
+>  'Püüton.txt'
   
 On ainult 2 raamatut: 'Tõde ja Õigus.txt' ja 'Püüton.txt'
