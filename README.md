@@ -50,7 +50,7 @@ Koosta regex, mis loeks laused kokku. Abiks:
 
 Lauses võivad olla mõttekohad: "..."
 
-Lauses võivad olla numbrid: "2. September on tore päev!"
+Lauses võivad olla numbrid: "2. september on tore päev!"
 
 ### get_paragraphs(file_path)
 Saab sisendiks faili, ning leiab selle raamatu(sisendfaili) peatükid.
