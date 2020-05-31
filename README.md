@@ -61,16 +61,16 @@ Kõik peatükkid on failis eraldi real ning on kujul:
 
 Tagastada list kõikidest pealkirjadest samal kujul. Näiteks:
 
-1. Algus
+>1. Algus
 
-See lugu algas ootamatult.
+>See lugu algas ootamatult.
 
-Väga ootamatult.
+>Väga ootamatult.
 
 
-2. Lõpp
+>2. Lõpp
 
-Lugu lõppes ootamatult.
+>Lugu lõppes ootamatult.
 
 
 Väljundiks oleks: ['1. Algus','2. Lõpp']
