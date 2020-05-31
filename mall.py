@@ -77,6 +77,20 @@ def get_paragraphs(file_path):
     pass
 
 
+def readability(file_path):
+    """
+    Calculate the readability index.
+
+    Formula to calculate with: 0.0588 * L - 0.296 * S - 15.8.
+    Where L is the average number of letters per 100 words in the text and
+    S is the average number of sentences per 100 words in the text.
+    Titles and punctuations should not be counted.
+    :param file_path: book contents as a string.
+    :return: readability index
+    """
+    pass
+
+
 def add_book(book_path, file_path):
     """
     Add a book and it's readability index to a given file.
@@ -102,19 +116,5 @@ def add_books(book_folder_path, file_path):
     :param book_folder_path:
     :param file_path:
     :return:
-    """
-    pass
-
-
-def readability(file_path):
-    """
-    Calculate the readability index.
-
-    Formula to calculate with: 0.0588 * L - 0.296 * S - 15.8.
-    Where L is the average number of letters per 100 words in the text and
-    S is the average number of sentences per 100 words in the text.
-    Titles and punctuations should not be counted.
-    :param file_path: book contents as a string.
-    :return: readability index
     """
     pass
