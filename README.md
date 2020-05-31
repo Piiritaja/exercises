@@ -14,9 +14,9 @@ kus L = keskmine tähtede arv 100 sõna kohta
     S = keskmine lausete arv 100 sõna kohta
 
 ## Mall
-mall tuleb siia!
+[Mall](mall.py)
 
-## Funktsioonid mida realiseerida
+## Funktsioonid, mida realiseerida
 
 ### read_file(file_path)
 Saab sisendiks faili(siin ülesandes on failiks raamatud .txt kujul), ning tagastab faili sisu stringina
