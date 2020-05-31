@@ -84,7 +84,7 @@ def readability(file_path):
     Formula to calculate with: 0.0588 * L - 0.296 * S - 15.8.
     Where L is the average number of letters per 100 words in the text and
     S is the average number of sentences per 100 words in the text.
-    Titles and punctuations should not be counted.
+    Punctuations should not be counted as characters(Search for only ASCII characters)
     :param file_path: book contents as a string.
     :return: readability index
     """
